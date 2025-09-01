@@ -1,3 +1,100 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    EBOB bilici
+  </title>
+  <style>
+    .sonucYeri{
+      background-color: rgb(40, 10, 70);
+      color: white;
+      font-family: arial, sans-serif;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      height: 30%;
+      width: 100%;
+      border: 1px solid white;
+    }
+    .islemler{
+      width: 100%;
+      height: 70%;
+      background-color: black;
+    }
+    .rakamlar{
+      width: 30%;
+      height: 30%;
+      border: 3px double white;
+      background-color: black;
+      border-radius: 50%;
+      text-align: center;
+      font-family: arial, sans-serif;
+      font-size: 50px;
+      line-height: 30px;
+      color: white;
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+     .onaylamaHidden{display:none;}
+  </style>
+</head>
+  <body>
+    <div class="sonucYeri">
+      <p id="sayi1P"></p>
+      <p id="sayi2P"></p>
+      <p id="sonucP"></p>
+    </div>
+    <div class="islemler">
+      <button onclick="bir()" class="rakamlar">1</button>
+      <button onclick="iki()" class="rakamlar">2</button>
+      <button onclick="uc()" class="rakamlar">3</button>
+      <button onclick="dort()" class="rakamlar">4</button>
+      <button onclick="bes()" class="rakamlar">5</button>
+      <button onclick="alti()" class="rakamlar">6</button>
+      <button onclick="yedi()" class="rakamlar">7</button>
+      <button onclick="sekiz()" class="rakamlar">8</button>
+      <button onclick="dokuz()" class="rakamlar">9</button>
+      <button onclick="sifir()" class="rakamlar">0</button>
+      <button onclick="ilkSayiOnaylama()" class="rakamlar">İkinci sayıya geç?</button>
+      <button onclick="onayla()" class="onaylamaHidden">Onayla✓</button>
+    </div>
+    
+    <script>
+      let bolenler = [];
+      let ortakBolenler = [];
+      let sayi1 = ""
+      let sayi2 = ""
+      let ilkSayida = true;
+      function ilkSayiOnaylama(){
+        ilkSayida = false;
+      }
+      function onayla(){
+        var hakikiSayi1 = Number(sayi1);
+        var hakikiSayi2 = Number(sayi2);
+        for(x=1; x<=sayi1; x=x+1){
+          if(sayi1%x===0){
+            bolenler.push(x);
+          };
+        };
+        for(y=1; y<=sayi2; y=y+1){
+          if(sayi2%y===0){
+            if(bolenler.includes(y)){
+              ortakBolenler.push(y);
+            };
+          };
+        };
+      }
+      function sifir(){
+        let  document.getElementById("sayi")
+        if(ilkSayida===true){
+        if(sayi1==""){alert("Başta sıfır olmaz...");}else{sayi1+="0";};
+          } else{
+          if(sayi2==""){alert("Başta sıfır olmaz...");}else{sayi2+="0";};
+      }
+    </script>
+  </body>
+</html>
 
 
