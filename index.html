@@ -13,13 +13,13 @@
       text-align: center;
       line-height: 50px;
       font-size: 30px;
-      height: 30%;
+      height: 170%;
       width: 100%;
       border: 1px solid white;
     }
     .islemler{
       width: 100%;
-      height: 70%;
+      height: 300%;
       background-color: black;
     }
     .rakamlar{
@@ -64,9 +64,11 @@
     <script>
       let bolenler = [];
       let ortakBolenler = [];
-      let sayi1 = ""
-      let sayi2 = ""
+      let sayi1 = "";
+      let sayi2 = "";
       let ilkSayida = true;
+      document.getElementById("sayi1P").innerHTML = sayi1;
+      document.getElementById("sayi2P").innerHTML = sayi2;
       function ilkSayiOnaylama(){
         ilkSayida = false;
       }
@@ -87,7 +89,6 @@
         };
       }
       function sifir(){
-        let  document.getElementById("sayi")
         if(ilkSayida===true){
         if(sayi1==""){alert("Başta sıfır olmaz...");}else{sayi1+="0";};
           } else{
