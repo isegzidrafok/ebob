@@ -86,22 +86,24 @@
       let ilkSayida = true;
       function ilkSayiOnaylama(){
         ilkSayida = false;
+        document.getElementById("sayi1P").innerHTML = "İlk sayı= " + sayi1;
         const onaylayici = document.getElementById("sonOnay");
         onaylayici.classList.replace("onaylamaHidden" , "onaylama");
       }
       function onayla(){
         let hakikiSayi1 = Number(sayi1);
         let hakikiSayi2 = Number(sayi2);
-        for(x=1; x<=sayi1; x=x+1){
-          if(sayi1%x===0){
+        for(x=1; x<=hakikiSayi1; x=x+1){
+          if(hakikiSayi1%x===0){
             bolenler.push(x);
           };
         };
-        for(y=1; y<=sayi2; y=y+1){
-          if(sayi2%y===0){
+        for(y=1; y<=hakikiSayi2; y=y+1){
+          if(hakikiSayi2%y===0){
             if(bolenler.includes(y)){
               ortakBolenler.push(y);
-              let EBOB = Math.max(ortakBolenler);
+              let EBOB = Math.max(...ortakBolenler);
+              document.getElementById("sayi2P").innerHTML = "İkinci sayı= " + sayi2;
               document.getElementById("sonucP").innerHTML = "En büyük ortak bölen= " + EBOB;
             };
           };
