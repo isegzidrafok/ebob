@@ -12,8 +12,8 @@
       color: white;
       font-family: arial, sans-serif;
       text-align: center;
-      line-height: 100px;
-      font-size: 75px;
+      line-height: 40px;
+      font-size: 40px;
       height: 400px;
       width: 100%;
       border: 1px solid white;
@@ -40,6 +40,21 @@
       margin-top: 10px;
     }
      .onaylamaHidden{visibility: hidden;}
+    .onaylama{
+      width: 300px;
+      height: 300px;
+      border: 3px double white;
+      background-color: rgb(20, 20, 60);
+      border-radius: 50%;
+      text-align: center;
+      font-family: arial, sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: red;
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
   </style>
 </head>
   <body>
@@ -60,7 +75,7 @@
       <button onclick="dokuz()" class="rakamlar">9</button>
       <button onclick="sifir()" class="rakamlar">0</button>
       <button onclick="ilkSayiOnaylama()" class="rakamlar">✓</button>
-      <button onclick="onayla()" class="onaylamaHidden">=?</button>
+      <button onclick="onayla()" class="onaylamaHidden" id="sonOnay">=?</button>
     </div>
     
     <script>
@@ -71,6 +86,8 @@
       let ilkSayida = true;
       function ilkSayiOnaylama(){
         ilkSayida = false;
+        const onaylayici = document.getElementById("sonOnay");
+        onaylayici.classList.replace("onaylamaHidden" , "onaylama");
       }
       function onayla(){
         let hakikiSayi1 = Number(sayi1);
