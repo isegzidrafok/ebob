@@ -32,7 +32,7 @@
       border-radius: 50%;
       text-align: center;
       font-family: arial, sans-serif;
-      font-size: 50px;
+      font-size: 100px;
       line-height: 100px;
       color: white;
       display: inline-block;
@@ -59,8 +59,8 @@
       <button onclick="sekiz()" class="rakamlar">8</button>
       <button onclick="dokuz()" class="rakamlar">9</button>
       <button onclick="sifir()" class="rakamlar">0</button>
-      <button onclick="ilkSayiOnaylama()" class="rakamlar">İkinci sayıya geç?</button>
-      <button onclick="onayla()" class="onaylamaHidden">Onayla✓</button>
+      <button onclick="ilkSayiOnaylama()" class="rakamlar">✓</button>
+      <button onclick="onayla()" class="onaylamaHidden">=?</button>
     </div>
     
     <script>
@@ -69,14 +69,12 @@
       let sayi1 = "";
       let sayi2 = "";
       let ilkSayida = true;
-      document.getElementById("sayi1P").innerHTML = sayi1;
-      document.getElementById("sayi2P").innerHTML = sayi2;
       function ilkSayiOnaylama(){
         ilkSayida = false;
       }
       function onayla(){
-        var hakikiSayi1 = Number(sayi1);
-        var hakikiSayi2 = Number(sayi2);
+        let hakikiSayi1 = Number(sayi1);
+        let hakikiSayi2 = Number(sayi2);
         for(x=1; x<=sayi1; x=x+1){
           if(sayi1%x===0){
             bolenler.push(x);
@@ -92,9 +90,11 @@
       }
       function sifir(){
         if(ilkSayida===true){
-        if(sayi1==""){alert("Başta sıfır olmaz...");}else{sayi1+="0";};
+        if(sayi1==""){alert("Başta sıfır olmaz...");}else{sayi1+="0";
+        document.getElementById("sayi1P").innerHTML = sayi1;};
           } else{
-          if(sayi2==""){alert("Başta sıfır olmaz...");}else{sayi2+="0";};
+          if(sayi2==""){alert("Başta sıfır olmaz...");}else{sayi2+="0";
+          document.getElementById("sayi2P").innerHTML = sayi2;};
       }
     </script>
   </body>
